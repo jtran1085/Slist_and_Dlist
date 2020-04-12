@@ -53,7 +53,7 @@ void dlist_popback(dlist* list){
 void dlist_pushfront(dlist* list, int data){
   dnode* p = dnode_create(data,NULL, list->head);
 
-  if(list->head != NULL) {list->head= p; list->size++; return;}
+  if(list->head != NULL) {list->head->prev= p;}
   list->head = p;
   ++list->size;
 }
